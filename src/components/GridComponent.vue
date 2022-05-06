@@ -33,15 +33,17 @@ export default {
     },
     mounted() {
         this.loading = true;
-        axios.get(this.apiPath + 'characters').then((res)=>{
+        setTimeout(()=>{
+            axios.get(this.apiPath + 'characters').then((res)=>{
             this.characterList = res.data;
             this.loading = false
             console.log(this.characterList)
         }).catch((error) => {
             console.log(error)
-        })
-    }
-}
+        }) 
+        },1000)
+    }    
+ }
 
 </script>
 
