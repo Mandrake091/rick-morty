@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header-component :title = 'titolo'/>
+    <main>
+      <grid-component/>
+    </main>
+    <!-- <footer-component/> -->
   </div>
+  
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import GridComponent from './components/GridComponent.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+// import FooterComponent from './components/FooterComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderComponent,
+    GridComponent,
+    // FooterComponent
+},
+  data(){
+    return{
+      titolo: 'Rick & Morty',
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./style/general.scss";
+
+
 </style>
