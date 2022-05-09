@@ -1,14 +1,17 @@
 <template>
 <div>
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons" v-model='inputText' @keyup.enter="search">
+        <select class="border-white" name="genre" id="genre" v-model="inputText" @change="changeSearch">
+            <option value="">All</option>
+            <option :value="specie" v-for="specie in characterSpecies" :key="specie">{{specie}}</option>
+        </select> 
+        <input type="text" class="form-control" placeholder="Search" v-model='inputText' @keyup.enter="search">
         <button class="btn btn-success" type="button" @click="search">Search</button>
         <button class="btn btn-danger" type="button"  @click="reset">Reset</button>
-</div>
-</div>
-  
-</template>
 
+    </div>
+</div>
+</template>
 <script>
 export default {
     name:'SearchBar',
@@ -17,6 +20,7 @@ export default {
             inputText:'',
         }
     },
+    props:['characterSpecies'],
     methods:{  
         reset(){
             this.inputText='';
@@ -24,12 +28,18 @@ export default {
         },
         search(){
             this.$emit('mySearch',this.inputText)
-            this.inputText='';
+           
+        },
+        changeSearch(){
+             this.$emit('mySearch',this.inputText)
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+select{
+    background: transparent;
+}
 
 </style>
