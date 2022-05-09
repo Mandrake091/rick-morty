@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <div class="text-center">
+    <div class="text-center mt-4">
         Found {{len}} character
     </div>
 

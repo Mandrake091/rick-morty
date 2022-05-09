@@ -14,6 +14,7 @@
     <h4 class="mt-3">{{item.name}}</h4>
     <div>{{item.origin}}</div>
     <div class="fw-bold">{{item.type}}</div>
+    <i class="fa-solid fa-heart fa-spin"></i>
 </div>
   
 </template>

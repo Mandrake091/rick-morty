@@ -6,8 +6,6 @@
     </main>
     <!-- <footer-component/> -->
   </div>
-  
- 
 </template>
 
 <script>
